@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>New student added</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>New student added</h1>
+<p th:text="'id: ' + ${student.id}" />
+<p th:text="'content: ' + ${student.name}" />
+<p><a href="/student">Add a new student</a></p>
+<p><a href="/students">Get all list of students </a></p>
+</body>
+</html>

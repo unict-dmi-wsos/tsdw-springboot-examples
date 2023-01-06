@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <title>Students</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+</head>
+<body>
+<table>
+    <p>The class has
+    <span th:text="${count}">count</span>
+        students
+    </p>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="student:${students}">
+        <td th:text="${student.id}">Id</td>
+        <td th:text="${student.name}">Name</td>
+    </tr>
+</table>
+<p><a href="/student">Add a new student</a></p>
+</body>
+</html>
