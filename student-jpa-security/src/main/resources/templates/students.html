@@ -7,11 +7,16 @@
     </head>
 </head>
 <body>
-    <p th:each="student:${students}">
-        <a th:href="@{/student/{id}(id = ${student.id})}">
-            <span th:text="${student.name}"></span>
-        </a>
-    </p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="student:${students}">
+        <td th:text="${student.id}">Id</td>
+        <td th:text="${student.name}">Name</td>
+    </tr>
+</table>
 <p><a href="/student">Add a new student</a></p>
 </body>
 </html>
