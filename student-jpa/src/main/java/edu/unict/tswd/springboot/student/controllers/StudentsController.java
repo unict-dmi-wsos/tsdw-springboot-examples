@@ -27,4 +27,10 @@ public class StudentsController {
         return "students"; // Name of the template
     }
 
+    @GetMapping(path="/searchByAgeLessThan/{age}")
+    public String getStudentByAgesLessTham(Model model,@PathVariable Integer age) {
+        model.addAttribute("students", studentRepository.findByAgeLessThanEqual(age));
+        return "students"; // Name of the template
+    }
+
 }

@@ -10,6 +10,7 @@
     <p th:each="student:${students}">
         <a th:href="@{/student/{id}(id = ${student.id})}">
             <span th:text="${student.name}"></span>
+            <span th:text="${student.age}"></span>
         </a>
     </p>
 <p><a href="/student">Add a new student</a></p>

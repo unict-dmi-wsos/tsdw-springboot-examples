@@ -8,6 +8,7 @@
 <h1>Add a new student</h1>
 <form action="#" th:action="@{/student}" th:object="${student}" method="post">
   <p>Name: <input type="text" th:field="*{name}" /></p>
+  <p>Age: <input type="text" th:field="*{age}" /></p>
   <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 </body>

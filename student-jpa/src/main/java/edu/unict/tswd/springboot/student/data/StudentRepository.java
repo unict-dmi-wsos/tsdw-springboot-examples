@@ -8,4 +8,8 @@ import java.util.List;
 public interface StudentRepository extends JpaRepository<Student,Long> {
     // Methods to search for name
     List<Student> findByName(String name);
+
+    // Methods to search for age
+    List<Student> findByAgeLessThanEqual(Integer age);
+
 }
