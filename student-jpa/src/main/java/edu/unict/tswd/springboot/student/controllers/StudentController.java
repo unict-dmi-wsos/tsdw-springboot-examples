@@ -24,7 +24,16 @@ public class StudentController {
     @GetMapping(path="/{id}")
     public String getStudent(Model model,@PathVariable Long id) {
         model.addAttribute("student", studentRepository.getReferenceById(id));
-        return "newStudentResult"; // Invoke ThymeLeaf template
+        return "student"; // Invoke ThymeLeaf template
+    }
+
+    // Delete Mapping needs ajax request or hidded Method
+    // https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes#httphiddenmethodfilter-disabled-by-default
+    @GetMapping(path="/delete/{id}")
+    public String deleteStudent(Model model,@PathVariable Long id) {
+        Student student = studentRepository.getReferenceById(id);
+        studentRepository.delete(student);
+        return "redirect:/students";
     }
 
     @PostMapping

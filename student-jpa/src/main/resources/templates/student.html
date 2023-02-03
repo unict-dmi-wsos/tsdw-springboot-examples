@@ -5,8 +5,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>Add a new student</h1>
+<h1>Add / Edit student</h1>
 <form action="#" th:action="@{/student}" th:object="${student}" method="post">
+  <p>Id: <input type="text" th:field="*{id}" th:disabled="${student.id == 0}" th:readonly="${student.id != 0}"/></p>
   <p>Name: <input type="text" th:field="*{name}" /></p>
   <p>Age: <input type="text" th:field="*{age}" /></p>
   <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>

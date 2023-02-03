@@ -8,10 +8,12 @@
 </head>
 <body>
     <p th:each="student:${students}">
-        <a th:href="@{/student/{id}(id = ${student.id})}">
-            <span th:text="${student.name}"></span>
-            <span th:text="${student.age}"></span>
-        </a>
+        <span th:text="${student.name}"></span>
+        :
+        <span th:text="${student.age}"></span>
+        <a th:href="@{/student/{id}(id = ${student.id})}">Edit ✎</a>
+        -
+        <a th:href="@{/student/delete/{id}(id = ${student.id})}">Delete 🗑</a>
     </p>
 <p><a href="/student">Add a new student</a></p>
 </body>
