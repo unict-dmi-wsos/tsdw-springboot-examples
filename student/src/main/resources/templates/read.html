@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h2>Studenti presenti</h2>
+
+        <form th:each="student : ${Students}" action="/form" method="POST">
+            ID: <span th:text="${student.id}"></span> - 
+            Nome: <span th:text="${student.name}"></span> - 
+            Et&agrave;: <span th:text="${student.age}"></span>
+
+            <input type="submit" name="action" value="Modifica">
+            <input type="submit" name="action" value="Rimuovi">
+            <input type="hidden" name="id" th:value="${student.id}"/>
+        </form>
+        
+        <br><a href="/"><button>Torna alla home</button></a>
+    </body>
+</html>
